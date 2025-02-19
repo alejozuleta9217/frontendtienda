@@ -15,7 +15,7 @@ npm install
 
 Ejecución del servidor
 
-npm start
+npm run start
 
 Carpeta src/ (Código fuente)
 
