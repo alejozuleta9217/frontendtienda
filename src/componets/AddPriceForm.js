@@ -8,7 +8,7 @@ const AddPriceForm = () => {
     id_usuario: "",
     id_producto: "",
     precio_especial: "",
-    fecha_inicio: dayjs().startOf("day").toISOString(), // Formato UTC
+    fecha_inicio: dayjs().startOf("day").toISOString(),
     fecha_fin: "",
   });
 
@@ -18,28 +18,28 @@ const AddPriceForm = () => {
     // Convertir valores según el campo
     setForm((prevForm) => ({
       ...prevForm,
-      [name]: name === "precio_especial" ? parseFloat(value) || "" : value, // Convertir a número si es precio
+      [name]: name === "precio_especial" ? parseFloat(value) || "" : value,
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    // Función para validar ObjectId (24 caracteres hexadecimales)
+    
     const isValidObjectId = (id) => /^[0-9a-fA-F]{24}$/.test(id);
   
-    // Validar que los ID sean correctos
+    
     if (!isValidObjectId(form.id_usuario) || !isValidObjectId(form.id_producto)) {
       alert("Error: El ID de usuario o producto no es válido.");
       return;
     }
   
-    // Asegurar formato correcto de las fechas
+    
     const formattedData = {
       ...form,
-      id_usuario: form.id_usuario.trim(), // Eliminar espacios
+      id_usuario: form.id_usuario.trim(), 
       id_producto: form.id_producto.trim(),
-      fecha_fin: dayjs(form.fecha_fin).startOf("day").toISOString(), // Convertir fecha a formato UTC
+      fecha_fin: dayjs(form.fecha_fin).startOf("day").toISOString(),
     };
   
     try {
