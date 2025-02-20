@@ -14,8 +14,7 @@ const AddPriceForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    // Convertir valores según el campo
+      
     setForm((prevForm) => ({
       ...prevForm,
       [name]: name === "precio_especial" ? parseFloat(value) || "" : value,
