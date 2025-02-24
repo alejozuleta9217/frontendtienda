@@ -28,8 +28,8 @@ const AddPriceForm = () => {
     const isValidObjectId = (id) => /^[0-9a-fA-F]{24}$/.test(id);
   
     
-    if (!isValidObjectId(form.id_usuario) || !isValidObjectId(form.id_producto)) {
-      alert("Error: El ID de usuario o producto no es válido.");
+    if (!isValidObjectId(form.id_producto)) {
+      alert("Error: El ID producto no es válido. busque un id valido en la tabla producto");
       return;
     }
   
